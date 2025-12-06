@@ -1,4 +1,3 @@
 # Lumina
 
-AI - powered adaptive learning platform — tutor + quizzes + timetable generator.
-
+Lumina - an AI powered platform with a virtual tutor and timetable generator
