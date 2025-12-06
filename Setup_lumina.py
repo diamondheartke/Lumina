@@ -2,7 +2,7 @@
 """
 setup_lumina.py
 Create Lumina project skeleton in the current working directory.
-Safe to run multiple times (won't overwrite existing files).
+Safe to run.
 """
 
 from pathlib import Path
@@ -24,8 +24,12 @@ FOLDERS = [
 FILES_WITH_CONTENT = {
     "README.md": (
         "# Lumina\n\n"
+<<<<<<< HEAD
         " Lumina - an AI powered platform with a virtual tutor and timetable generator\n\n"
     ),
+=======
+        "Lumina - an AI powered platform with a virtual tutor and timetable generator"    ),
+>>>>>>> 091a002f8575af1c4c331bfd58ccabd00fe0aae0
     "requirements.txt": "flask\nrequests\npython-dotenv\n# kivy\n# kivymd\n",
     ".gitignore": "__pycache__/\n.env\n*.pyc\n.DS_Store\n",
     "prompts/tutor_baseline.txt": (

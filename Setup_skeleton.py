@@ -5,11 +5,11 @@ folders = [
     "backend",
     "frontend",
     "frontend/screens",
+    "frontend/scripts",
     "prompts",
     "data",
     "data/teachers",
-    "notebooks",
-    "scripts"
+    "notebooks"
 ]
 
 # Files to create (placeholders)
@@ -20,6 +20,9 @@ files = [
     "backend/quiz_engine.py",
     "backend/timetable.py",
     "frontend/main.py",
+    "frontend/scripts",
+    "frontend/scripts/LoginScreen.py",
+    "frontend/scripts/LessonScreen.py",
     "frontend/screens/login.kv",
     "frontend/screens/lesson.kv",
     "frontend/screens/quiz.kv",
@@ -27,8 +30,7 @@ files = [
     "prompts/tutor_baseline.txt",
     "data/sample_transcripts.json",
     "data/sample_quiz.json",
-    "notebooks/experiment_api_calls.ipynb",
-    "scripts/demo_flow.py"
+    "notebooks/experiment_api_calls.ipynb"
 ]
 
 # Create folders

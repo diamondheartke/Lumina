@@ -119,4 +119,8 @@ if __name__ == "__main__":
         filepath = os.path.join(PATH, filename)
         
         JS.create_json(filepath, Tr.send_to_json())
+<<<<<<< HEAD
         print(f"JSON created successfully: {filename}")
+=======
+        print(f"JSON created successfully: {filename}")
+>>>>>>> 091a002f8575af1c4c331bfd58ccabd00fe0aae0
