@@ -6,5 +6,5 @@ Name: Lumina - Light from Beyond
 Tagline: 'Lighting the Way to Smarter Learning'
 Brand defenition: Intelligent guidance that illuminates learning, cuts through confusuion and sparks curiosity in every student.
 
-Lumina - The light from Beyond
+Lumina - The light from Beyond \n
 'Lighting the way to smarter learning'
