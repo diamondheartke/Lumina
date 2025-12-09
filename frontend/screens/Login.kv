@@ -1,4 +1,12 @@
 # screens/login.kv
 <LoginScreen>:
     MDLabel:
-        text: "Login"
+        halign: "center"
+        valign: "center"
+        font_style: "H1"
+        theme_text_color: "Primary"
+        #For an adaptive text height
+        adaptive_height: True 
+        text: "Login screen"
+        size_hint_y: None
+        height: self.texture_size[1] + dp(28)

@@ -26,28 +26,19 @@ class LoadingScreen(MDScreen):
     """Screen that loads KV files in background, then navigates to login."""
 
     def on_enter(self):
-        self.loading_kivy_path = "screens/loading.kv"
         #self.relative_image_path = os.path.join(os.path.dirname(__file__), "..", "assets", "loading", "loading_image.jpg")
         #self.ids.loading_image.source = "assets/loading/loading_image.jpg"
         self.image_path = "assets/loading/loading_image.jpg"
         print("Image path exists:", os.path.exists(self.image_path))
-        try:
-            if os.path.exists(self.loading_kivy_path):
-                Builder.load_file(self.loading_kivy_path)
-                print("Successfully loaded loading.kv")
-            else:
-                print(f"loading.kv does not exist: {self.loading_kivy_path}")
-        except Exception as e:
-            print("Error loading \'loading.kv\': {e}")
         print("LoadingScreen entered")
-        threading.Thread(target=self.preload_kv, daemon=True).start() 
-
-    def preload_kv(self):
+        self.load_kv()
+        
+    def load_kv(self):
         for kv in kv_files:
             try:
                 path = os.path.join(os.path.dirname(__file__), "..", kv)
                 if os.path.exists(path):
-                    Builder.load_file({kv})
+                    Builder.load_file(kv)
                     print(f"Loaded {kv} successfully.")
                 else:
                     print(f"KV file not found: {path}")
