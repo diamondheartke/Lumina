@@ -1,6 +1,12 @@
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)          
+print("Working directory set to:", os.getcwd())
+
 from kivymd.app import MDApp
 from kivymd.uix.screenmanager import ScreenManager
-from kivy.uix.videoplayer import VideoPlayer
+
 
 # Import screens
 from scripts.login_screen import LoginScreen
