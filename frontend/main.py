@@ -21,6 +21,14 @@ class LuminaApp(MDApp):
     loading_image = "assets/loading/loading_image.jpg"
     loading_animation = "assets/loading/loading_animation.json"
 
+    app_logo = "assets/images/logo/app_logo1.png"
+    app_icon = "assets/images/icons/app_icon.png"
+
+    login_wallpaper = "assets/images/wallpapers/login_wallpaper.jpg"
+    lesson_wallpaper = "assets/images/wallpapers/lesson_wallpaper.jpg"
+    quiz_wallpaper = "assets/images/wallpapers/quiz_wallpaper.jpg"
+    timetable_wallpaper = "assets/images/wallpapers/timetable_wallpaper.jpg"    
+
     Name = "Lumina"
     version = "1.0.0"
 
