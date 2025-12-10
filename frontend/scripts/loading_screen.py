@@ -16,6 +16,7 @@ import os
 
 kv_files = [
     "screens/login.kv",
+    "screens/signup.kv",
     "screens/lesson.kv",
     "screens/quiz.kv",
     "screens/timetable.kv"

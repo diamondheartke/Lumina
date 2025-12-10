@@ -9,8 +9,10 @@ from kivymd.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
 
 # Import screens
-from scripts.login_screen import LoginScreen
 from scripts.loading_screen import LoadingScreen
+from scripts.login_screen import LoginScreen
+from scripts.signup_screen import SignupScreen
+
 
 class LuminaScreenManager(ScreenManager):
     pass
@@ -33,8 +35,8 @@ class LuminaApp(MDApp):
     version = "1.0.0"
 
     def build(self):
-        #self.theme_cls.primary_palette = "Indigo"
-        #self.theme_cls.theme_style = "Light"
+        self.theme_cls.primary_palette = "Indigo"
+        self.theme_cls.theme_style = "Light"
 
         sm = LuminaScreenManager()
 
@@ -48,9 +50,10 @@ class LuminaApp(MDApp):
         except Exception as e:
             print("Error loading \'loading.kv\': {e}")
 
-        # Add loading screen first, then others
+        # Adding loading screen first, then others
         sm.add_widget(LoadingScreen(name="loading"))
         sm.add_widget(LoginScreen(name="login"))
+        sm.add_widget(SignupScreen(name="signup"))
 
         sm.current = "loading"
 
