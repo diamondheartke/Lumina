@@ -77,3 +77,60 @@
                     color_active: 0.6, 0.4, 1, 1
                     line_color_focus: 0.8, 0.6, 1, 1
                     font_size: "16sp"
+                
+                # Password field + eye toggle
+                MDTextField:
+                    id: password_field
+                    hint_text: "Password"
+                    icon_left: "lock"
+                    icon_left_color_normal: 0.8, 0.6, 1, 1  # blue glow
+                    icon_right: "eye-off-outline"
+                    icon_right_color_normal: 1, 1, 1, 0.7
+                    password: True
+                    mode: "round"
+                    size_hint_x: .9
+                    pos_hint: {"center_x": .5}
+                    normal_color: 1, 1, 1, 0.1
+                    color_active: 0.6, 0.4, 1, 1
+                    line_color_focus: 0.8, 0.6, 1, 1
+                    font_size: "16sp"
+
+                    # Eye toggle logic
+                    on_icon_right:
+                        self.parent.parent.parent.parent.toggle_password()  # calls the Python method
+                # Space before button
+                Widget:
+                    size_hint_y: None
+                    height: "20dp"
+
+                # Gradient Login button
+                MDRectangleFlatButton:
+                    text: "Login"
+                    font_size: "18sp"
+                    bold: True
+                    size_hint_x: .9
+                    pos_hint: {"center_x": .5}
+                    height: "56dp"
+                    radius: [28]
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    line_color: 0, 0, 0, 0
+
+                    canvas.before:
+                        Color:
+                            rgba: 0.35, 0.7, 1, 1          # bright blue
+                        RoundedRectangle:
+                            pos: self.x, self.y
+                            size: self.width, self.height
+                            radius: [28]
+
+                # Credits at the very bottom
+                MDLabel:
+                    text: "Created By\n Diamond Ebenyo \n AVA Tech \n "
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 0.5
+                    font_style: "Caption"
+                    font_size: "11sp"
+                    size_hint_y: None
+                    height: self.texture_size[1] + dp(20)
