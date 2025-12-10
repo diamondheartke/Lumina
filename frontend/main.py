@@ -13,6 +13,7 @@ from kivy.lang import Builder
 from scripts.loading_screen import LoadingScreen
 from scripts.login_screen import LoginScreen
 from scripts.signup_screen import SignupScreen
+from scripts.home_screen import HomeScreen 
 
 
 class LuminaScreenManager(ScreenManager):
@@ -25,6 +26,7 @@ class LuminaApp(MDApp):
     loading_animation = "assets/loading/loading_animation.json"
 
     app_logo = "assets/images/logo/app_logo1.png"
+    app_logo2 = "assets/images/logo/app_logo.png"
     app_icon = "assets/images/icons/app_icon.png"
 
     login_wallpaper = "assets/images/wallpapers/login_wallpaper.jpg"
@@ -55,6 +57,7 @@ class LuminaApp(MDApp):
         sm.add_widget(LoadingScreen(name="loading"))
         sm.add_widget(LoginScreen(name="login"))
         sm.add_widget(SignupScreen(name="signup"))
+        sm.add_widget(HomeScreen(name="home"))
 
         sm.current = "loading"
 

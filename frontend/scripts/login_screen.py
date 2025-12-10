@@ -9,6 +9,7 @@ class LoginScreen(MDScreen):
 
     def try_login(self):    
         print("Login attempt initiated")
+        self.manager.current = "home"
 
     def switch_to_signup(self):
         self.manager.current = "signup"
