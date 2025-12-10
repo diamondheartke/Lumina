@@ -6,6 +6,7 @@ print("Working directory set to:", os.getcwd())
 
 from kivymd.app import MDApp
 from kivymd.uix.screenmanager import ScreenManager
+from kivy.uix.screenmanager import FadeTransition
 from kivy.lang import Builder
 
 # Import screens
@@ -38,7 +39,7 @@ class LuminaApp(MDApp):
         self.theme_cls.primary_palette = "Indigo"
         self.theme_cls.theme_style = "Light"
 
-        sm = LuminaScreenManager()
+        sm = LuminaScreenManager(transition=FadeTransition(duration=0.8))
 
         self.loading_kivy_path = "screens/loading.kv"
         try:

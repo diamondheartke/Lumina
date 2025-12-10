@@ -1,0 +1,4 @@
+#Kivymd version specification
+Name: kivymd
+Version: 1.2.0
+
