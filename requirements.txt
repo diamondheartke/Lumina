@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+kivy
+kivymd==1.2.0
+argon2-cffi
+matplotlib
+numpy
+pandas
+scikit-learn
+joblib
+sentence-transformers
+faiss-cpu
+pyttsx3
+
+=======
+#Kivymd version specification
+Name: kivymd
+Version: 1.2.0
+>>>>>>> d345f3b848890f7f6c947c400d40f26792b8fcc8
+

@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+
+# Databases
+#*.db
+
+# ML models
+*.pkl
+*.faiss
+*.pt
+
+# User data
+#data/user/
+data/teachers
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Ignore heavy game asset zips and art source files
+animation/
+animation/assets/*.zip
+*.kra
+*.eps
+*.ai
+*.psd
+
+# Test and virtualenv artifacts
+.pytest_cache/
+.venv/
+venv/
+test.*
+test/
+tests/
+*.env*
+
+# tools
+create_analysis_zip.py

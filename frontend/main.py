@@ -1,0 +1,67 @@
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)          
+print("Working directory set to:", os.getcwd())
+
+from kivymd.app import MDApp
+from kivymd.uix.screenmanager import ScreenManager
+from kivy.uix.screenmanager import FadeTransition
+from kivy.lang import Builder
+
+# Import screens
+from scripts.loading_screen import LoadingScreen
+from scripts.login_screen import LoginScreen
+from scripts.signup_screen import SignupScreen
+from scripts.home_screen import HomeScreen 
+
+
+class LuminaScreenManager(ScreenManager):
+    pass
+
+class LuminaApp(MDApp):
+    # Main application class
+    # ------- GLOBAL Assets & Configuration -------
+    loading_image = "assets/loading/loading_image.jpg"
+    loading_animation = "assets/loading/loading_animation.json"
+
+    app_logo = "assets/images/logo/app_logo1.png"
+    app_logo2 = "assets/images/logo/app_logo.png"
+    app_icon = "assets/images/icons/app_icon.png"
+
+    login_wallpaper = "assets/images/wallpapers/login_wallpaper.jpg"
+    lesson_wallpaper = "assets/images/wallpapers/lesson_wallpaper.jpg"
+    quiz_wallpaper = "assets/images/wallpapers/quiz_wallpaper.jpg"
+    timetable_wallpaper = "assets/images/wallpapers/timetable_wallpaper.jpg"    
+
+    Name = "Lumina"
+    version = "1.0.0"
+
+    def build(self):
+        self.theme_cls.primary_palette = "Indigo"
+        self.theme_cls.theme_style = "Light"
+
+        sm = LuminaScreenManager(transition=FadeTransition(duration=0.8))
+
+        self.loading_kivy_path = "screens/loading.kv"
+        try:
+            if os.path.exists(self.loading_kivy_path):
+                Builder.load_file(self.loading_kivy_path)
+                print("Successfully loaded loading.kv")
+            else:
+                print(f"loading.kv does not exist: {self.loading_kivy_path}")
+        except Exception as e:
+            print("Error loading \'loading.kv\': {e}")
+
+        # Adding loading screen first, then others
+        sm.add_widget(LoadingScreen(name="loading"))
+        sm.add_widget(LoginScreen(name="login"))
+        sm.add_widget(SignupScreen(name="signup"))
+        sm.add_widget(HomeScreen(name="home"))
+
+        sm.current = "loading"
+
+        return sm  
+    
+if __name__ == "__main__":
+    LuminaApp().run()
